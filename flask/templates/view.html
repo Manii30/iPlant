@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url("{{url_for('static',filename='IMG_8961.JPG')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .containert {
+            height: 750px;
+            width: 1100px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: absolute;
+            top: 30px;
+            left: 180px;
+            border-radius: 20px;
+        }
+
+        .imagepre {
+            position: relative;
+            top: 60px;
+            left: 50px;
+        }
+
+        .wrin {
+            position: relative;
+            top: -300px;
+            left: 550px;
+            font-size: 30px;
+        }
+
+        .back {
+            background-color: rgb(198, 0, 0);
+            font-size: 25px;
+            position: relative;
+            top: 230px;
+            left: 960px;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .disc {
+            width: 45%;
+            position: relative;
+            top: -350px;
+            left: 550px;
+            font-size: 20px;
+        }
+
+        .bene {
+            width: 40%;
+            height: 300px;
+            font-size: 17px;
+            position: absolute;
+            top: 450px;
+            left: 100px;
+        }
+
+        .benef {
+            position: relative;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    {% if prediction %}
+    <div class="containert">
+        <img class="imagepre" src="{{url_for('static',filename='image/'+img)}}" height="350px" width="400px">
+        {% for row in student %}
+        <h2 class="wrin"> Name : <i> {{row.1}} </i></h2>
+        <a href="{{url_for('upload')}}" class="back">Back</a>
+        <div class="disc">
+            <h2> Discription : <i> {{row.2}}</i></h2>
+        </div>
+        <div class="bene">
+            <h2> Benefits : <br>
+            {% for i in benefits %}
+                <i class="benef">{{i}},<br></i>
+            {% endfor %}
+            </h2>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url("{{url_for('static',filename='IMG_8959.JPG')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size:100% 100% ;
+        }
+
+        .navbar {
+            background-color: rgb(0, 0, 0, 0.8);
+            width: 98%;
+            height: 80px;
+            position: relative;
+            left: 20px;
+            top: 30px;
+            border-radius: 10px;
+            color: white;
+            display: inline-block;
+        }
+
+        .right {
+            float: left;
+            position: relative;
+            left: 170px;
+            top: 8px;
+            font-size: 50px;
+        }
+
+        .left {
+            float: right;
+            position: relative;
+            right: 70px;
+            top: 20px;
+            font-size: 25px;
+        }
+
+        a {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .box {
+            height: 600px;
+            margin-bottom: 20px;
+            position: relative;
+            top: 80px;
+            left: 200px;
+            width: 50%;
+        }
+
+        .box1 {
+            height: 150px;
+            background-color: rgb(0, 0, 0, 0.8);
+            color: white;
+            width: 500px;
+            border-radius: 15px;
+        }
+
+        .box2 {
+            height: 150px;
+            background-color: rgb(0, 0, 0, 0.8);
+            color: white;
+            width: 500px;
+            border-radius: 15px;
+        }
+
+        .box3 {
+            height: 150px;
+            background-color: rgb(0, 0, 0, 0.8);
+            color: white;
+            width: 500px;
+            border-radius: 15px;
+        }
+
+        .wri {
+            position: relative;
+            left: 250px;
+            top: 10px;
+            font-size: 20px;
+        }
+
+        /* footer-------*/
+        .footer {
+            height: 130px;
+            background-color: rgb(0, 0, 0, 0.9);
+            position: relative;
+            top: 23px;
+        }
+
+        .photo {
+            position: absolute;
+            top: 15px;
+            left: 60px;
+        }
+
+        .photo1 {
+            position: absolute;
+            top: 190px;
+            left: 60px;
+        }
+
+        .photo2 {
+            position: absolute;
+            top: 370px;
+            left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="right">
+            <a href="{{url_for('main')}}">iplant</a>
+        </div>
+        <div class="left">
+            <a href="{{url_for('upload')}}">Upload</a>
+            <a href="">Camera</a>
+            <a href="{{url_for('history')}}">History</a>
+            <a href="{{url_for('team')}}">Team-Member</a>
+        </div>
+    </div>
+    <div class="box">
+        <div class="box1">
+            <div class="photo">
+                <img src="{{url_for('static',filename='image.JPEG')}}" style="height: 120px; width: 130px;">
+            </div>
+            <div class="wri">
+                <h4>Manthan Vyas</h4>
+                <h4>20100BTBDAI07216</h4>
+                <h4>CSE-BDA</h4>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="photo1">
+                <img src="{{url_for('static',filename='Sonia.JPG')}}" style="height: 120px; width: 130px;">
+            </div>
+            <div class="wri">
+                <h4>Gautam Sharma</h4>
+                <h4>20100BTBDAI07207</h4>
+                <h4>CSE-BDA</h4>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="photo2">
+                <img src="{{url_for('static',filename='IMG_8868 .jpg')}}" style="height: 120px; width: 130px;">
+            </div>
+            <div class="wri">
+                <h4>Sumit Dubey</h4>
+                <h4>20100BTBDAI07222</h4>
+                <h4>CSE-BDA</h4>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+
+</html>

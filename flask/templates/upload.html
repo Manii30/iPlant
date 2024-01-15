@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url("{{url_for('static',filename='IMG_8960.JPG')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: rgb(0, 0, 0, 0.8);
+            width: 98%;
+            height: 80px;
+            position: relative;
+            left: 20px;
+            top: 30px;
+            border-radius: 10px;
+            color: white;
+            display: inline-block;
+        }
+
+        .right {
+            float: left;
+            position: relative;
+            left: 170px;
+            top: 8px;
+            font-size: 50px;
+        }
+
+        .left {
+            float: right;
+            position: relative;
+            right: 70px;
+            top: 20px;
+            font-size: 25px;
+        }
+
+        a {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .box {
+            height: 380px;
+            width: 400px;
+            background-color: rgb(0, 0, 0, 0.6);
+            position: relative;
+            top: 100px;
+            left: 750px;
+            border-radius: 15px;
+        }
+
+        .input3 {
+            color: white;
+            text-align: center;
+            position: relative;
+            top: 35px;
+            font-size: 55px;
+        }
+
+        .input2 {
+            color: white;
+        }
+
+        .form-control {
+            font-size: 25px;
+            position: relative;
+            top: 30px;
+            left: 35px;
+            width: 100%;
+        }
+
+        button {
+            font-size: 15px;
+            position: relative;
+            top: 170px;
+            left: 0px;
+            height: 40px;
+            width: 100%;
+            border-radius: 0px 0px 15px 15px;
+
+        }
+
+        /* footer-------*/
+
+        .footer {
+            height: 130px;
+            background-color: rgb(0, 0, 0, 0.9);
+            position: relative;
+            top: 240px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="right">
+            <a href="{{url_for('main')}}">iplant</a>
+        </div>
+        <div class="left">
+            <a href="{{url_for('upload')}}">Upload</a>
+            <a href="">Camera</a>
+            <a href="{{url_for('history')}}">History</a>
+            <a href="{{url_for('team')}}">Team-Member</a>
+        </div>
+    </div>
+    <div class="box">
+        <div>
+            <h1 class="input3">Upload Image</h1>
+            <br><br>
+            <form class="input2" action="/view.html" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="file" class="form-control" placeholder="Hours Studied" name="my_image" id="pwd">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+
+</html>

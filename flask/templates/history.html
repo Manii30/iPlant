@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-repeat: no-repeat;
+            background-image: url("{{url_for('static',filename='IMG_8957.JPG')}}");
+            background-size:100% 345% ;
+        }
+
+        .navbar {
+            background-color: rgb(0, 0, 0, 0.8);
+            width: 98%;
+            height: 80px;
+            position: relative;
+            left: 20px;
+            top: 30px;
+            border-radius: 10px;
+            color: white;
+            display: inline-block;
+        }
+
+        .right {
+            float: left;
+            position: relative;
+            left: 170px;
+            top: 8px;
+            font-size: 50px;
+        }
+
+        .left {
+            float: right;
+            position: relative;
+            right: 70px;
+            top: 20px;
+            font-size: 25px;
+        }
+        a {
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* footer-------*/
+
+        .footer {
+            height: 130px;
+            background-color: rgb(0, 0, 0, 0.9);
+            position: relative;
+            top: 655px;
+        }
+        .box{
+            position: absolute;
+            top: 200px;
+            left: 120px;
+            width: 85%;
+        }
+
+        td, th {
+  border: 3px solid #dddddd;
+  text-align: left;
+  padding: 13px;
+  font-weight: bolder;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="right">
+            <a href="{{url_for('main')}}">iplant</a>
+        </div>
+        <div class="left">
+            <a href="{{url_for('upload')}}">Upload</a>
+            <a href="">Camera</a>
+            <a href="{{url_for('history')}}">History</a>
+            <a href="{{url_for('team')}}">Team-Member</a>
+        </div>
+    </div>
+    <div class="box">
+        {% if session %}
+        <table>
+            <tr>
+              <th>Name</th>
+              <th>Discription</th>
+              <th>Benfits</th>
+            </tr>
+        {% for i in session %}
+        {% for j in i %}
+            <tr>
+              <td>{{j.1}}</td>
+              <td>{{j.2}}</td>
+              <td>{{j.3}}</td>
+          {% endfor %}
+        {% endfor %}
+    </tr>
+</table>
+{% endif %}
+    </div>
+    <div class="footer">
+    </div>
+</body>
+
+</html>
